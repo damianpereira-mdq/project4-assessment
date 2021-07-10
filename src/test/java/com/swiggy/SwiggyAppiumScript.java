@@ -21,8 +21,8 @@ public class SwiggyAppiumScript {
 
 		
 		DesiredCapabilities cap = new DesiredCapabilities();		
-		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "7.1.1");
+		//cap.setCapability("platformName", "Android");
+		//cap.setCapability("platformVersion", "7.1.1");
 		//cap.setCapability("remoteAdbHost", "127.0.0.1");
 		//cap.setCapability("adbPort", "6080");
 		
@@ -34,7 +34,7 @@ public class SwiggyAppiumScript {
 		
 		
 		//This is Docker 		
-		URL url = new URL("http://127.0.0.1:4444/wd/hub/");
+		URL url = new URL("http://18.221.185.200:4444/wd/hub/");
 
 		//This is local Appium
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");

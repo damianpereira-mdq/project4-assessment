@@ -15,7 +15,7 @@ public class SwiggyAppiumScript {
 	
 	static AndroidDriver<MobileElement> driver;	
 	
-	@Test
+	
 	public void StartConnection () throws MalformedURLException {
 
 		
@@ -49,7 +49,7 @@ public class SwiggyAppiumScript {
 		//driver.quit();
 	}
 	
-	
+	@Test
 	public void test1 () {
 		
 		System.out.println("This is the test N1");

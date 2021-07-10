@@ -14,7 +14,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class SwiggyAppiumScript {
 	
-	static AndroidDriver<WebElement> driver;	
+	static AndroidDriver<MobileElement> driver;	
 	
 	@Test
 	public void StartConnection () throws MalformedURLException {
@@ -40,7 +40,7 @@ public class SwiggyAppiumScript {
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");
 		
 		
-		driver = new AndroidDriver<WebElement>(url, cap);		
+		driver = new AndroidDriver<MobileElement>(url, cap);		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Connection successfuly started!");
 	}

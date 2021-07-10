@@ -19,7 +19,7 @@ services:
       - 6080
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
-      - .\swiggy-3-69-1.apk:/root/tmp
+      - ./swiggy-3-69-1.apk:/root/tmp
       - ./video-nexus_7.1.1:/tmp/video
     environment:
       - DEVICE=Nexus 5

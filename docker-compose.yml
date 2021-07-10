@@ -1,29 +1,57 @@
-version: "2.2"
-
+version: '2'
 services:
-  # Selenium hub
-  selenium_hub:
-    image: selenium/hub:3.14.0-curium
-    ports:
-      - 4444:4444
+ hub:
+   image: selenium/hub:3.14.0
+   container_name: hub
+   ports:
+     - "4444:4444"
+ samsung_galaxy:
+   image: butomo1989/docker-android-x86-8.1
+   privileged: true
+   depends_on:
+     - hub
+   ports:
+     - "6080:6080"
+   environment:
+     - DEVICE=Samsung Galaxy S6
+     - CONNECT_TO_GRID=True
+     - APPIUM=true
+     - SELENIUM_HOST=hub
+     - MOBILE_WEB_TEST=False
+     - AUTO_RECORD=True
+ nexus:
+   image: butomo1989/docker-android-x86-8.1
+   privileged: true
+   depends_on:
+     - hub
+   ports:
+     - "6081:6080"
+   environment:
+     - DEVICE=Nexus 5
+     - CONNECT_TO_GRID=True
+     - APPIUM=true
+     - SELENIUM_HOST=hub
+     - MOBILE_WEB_TEST=False
+     - AUTO_RECORD=True
 
   # Docker-Android for Android application testing
-  nexus_7.1.1:
+ nexus_7.1.1:
     image: budtmo/docker-android-x86-7.1.1
     privileged: true
     # Increase scale number if needed
     scale: 1
     depends_on:
-      - selenium_hub      
+      - hub      
     ports:
-      - 6080
+      - "6082:6080"
     # Change path of apk that you want to test. I use sample_apk that I provide in folder "example"
     volumes:
       - ./swiggy-3-69-1.apk:/root/tmp
       - ./video-nexus_7.1.1:/tmp/video
     environment:
       - DEVICE=Nexus 5
-      - CONNECT_TO_GRID=true
+      - CONNECT_TO_GRID=True
       - APPIUM=true
-      - SELENIUM_HOST=selenium_hub
-      - AUTO_RECORD=true  
+      - SELENIUM_HOST=hub
+      - MOBILE_WEB_TEST=False
+      - AUTO_RECORD=True 

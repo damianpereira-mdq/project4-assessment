@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+
+    selenium-hub:
+        image: selenium/hub:latest
+        container_name: selenium-hub
+        ports:
+            - "4444:4444"
+        expose:
+            - "4444"
+   
+    docker-android-x86-10.0:
+        container_name: android-container
+        image: budtmo/docker-android-x86-10.0  
+        privileged: true        
+        depends_on:
+            - selenium-hub              
+        ports:
+            - '6080:6080'            
+        expose:
+            - '6080'         
+        volumes:
+            - '/dev/bus/usb:/dev/bus/usb'
+            - 'E:\Simplilearn\Project4-Assessment\swiggy-3-69-1.apk:/root/tmp'
+        environment:
+            - DEVICE=Samsung Galaxy S10
+            - MOBILE_WEB_TEST=true            
+            - APPIUM=true
+            - CONNECT_TO_GRID=true            
+            - SELENIUM_HOST=selenium-hub           
+            
+         

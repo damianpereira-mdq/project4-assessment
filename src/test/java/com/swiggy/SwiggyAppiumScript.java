@@ -5,44 +5,51 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 public class SwiggyAppiumScript {
 	
-	AndroidDriver<MobileElement> driver;
-
-	@BeforeClass
+	static AndroidDriver<MobileElement> driver;	
+	
+	@Test
 	public void StartConnection () throws MalformedURLException {
 
 		
-		DesiredCapabilities cap = new DesiredCapabilities();
-
-		cap.setCapability("deviceName", "sdk_gphone_x86_arm");
-		cap.setCapability("udid", "emulator-5554");
+		DesiredCapabilities cap = new DesiredCapabilities();		
 		cap.setCapability("platformName", "Android");
-		cap.setCapability("platformVersion", "10");
-		cap.setCapability("appPackage", "in.swiggy.android");
-		cap.setCapability("appActivity", "in.swiggy.android.activities.HomeActivity");
-		//cap.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
-
+		cap.setCapability("platformVersion", "7.1.1");
+		//cap.setCapability("remoteAdbHost", "127.0.0.1");
+		//cap.setCapability("adbPort", "6080");
 		
-		URL url = new URL("http://0.0.0.0:4723/wd/hub/");
+		
+		//cap.setCapability("app", "/swiggy-3-69-1.apk");
+		//cap.setCapability("appPackage", "in.swiggy.android");
+		//cap.setCapability("appActivity", "in.swiggy.android.activities.HomeActivity");
+		//cap.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
+		
+		
+		//This is Docker 		
+		URL url = new URL("http://127.0.0.1:4444/wd/hub/");
+
+		//This is local Appium
+		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");
+		
+		
 		driver = new AndroidDriver<MobileElement>(url, cap);		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Connection successfuly started!");
 	}
 
-	@AfterClass
+	
 	public void TearDown () {		
 		//driver.quit();
 	}
 	
-	@Test
+	
 	public void test1 () {
 		
 		System.out.println("This is the test N1");

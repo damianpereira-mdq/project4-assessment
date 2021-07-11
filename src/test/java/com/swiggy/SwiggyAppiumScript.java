@@ -5,10 +5,14 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -16,40 +20,57 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class SwiggyAppiumScript {
 	
-	static RemoteWebDriver driver;
+	AppiumDriver<WebElement> driver;
 	
-	@Test
+	@BeforeClass
 	public void StartConnection () throws MalformedURLException {
 
-		
+		System.out.println("Starting Connection...");
 		
 		DesiredCapabilities cap = new DesiredCapabilities();			
 		
-		cap.setCapability("deviceName", "nexus_5_5.1.1");		
-		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		//cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
-		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
-		cap.setCapability("systemPort", 8201);
+		/* SWIGGY
+		 * cap.setCapability("deviceName", "appium-emulator");
+		 * cap.setCapability("udid","emulator-5554"); cap.setCapability("platformName",
+		 * "Android"); cap.setCapability("platformVersion", "4.4");
+		 * cap.setCapability("appPackage","in.swiggy.android");
+		 * cap.setCapability("appActivity","in.swiggy.android.activities.HomeActivity");
+		 */
 		
+		
+		  cap.setCapability("deviceName", "appium-emulator"); 
+		  cap.setCapability("udid","emulator-5554"); 
+		  cap.setCapability("platformName", "Android"); 
+		  cap.setCapability("platformVersion", "4.4"); 
+		  cap.setCapability("appPackage","com.android.calculator2"); 
+		  cap.setCapability("appActivity","com.android.calculator2.Calculator");
+		 
+		
+		
+		
+		
+		
+		//cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
+		//cap.setCapability("systemPort", 8201);		
 		//cap.setCapability("appPackage", "com.miui.calculator");
 		//cap.setCapability("appActivity", "com.miui.calculator.cal.CalculatorActivity");		
 			
 		
 		//This is Docker 		
-		URL url = new URL("http://3.135.209.114:4444/wd/hub");
+		URL url = new URL("http://0.0.0.0:49155/wd/hub");
 
 		//This is local Appium
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");		
 		
-		driver = new RemoteWebDriver(url, cap);		
+		driver = new AppiumDriver<WebElement>(url, cap);		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Connection successfuly started!");
-		driver.quit();
+		
 	}
 
-	
+	@AfterClass
 	public void TearDown () {		
-		//driver.quit();
+		driver.quit();
 	}
 	
 	@Test

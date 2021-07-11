@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.393 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 22.164 s <<< FAILURE! - in TestSuite
+StartConnection(com.swiggy.SwiggyAppiumScript)  Time elapsed: 21.596 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Unable to create a new remote session. Original error: Failed to connect to /172.17.0.2:49412
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: driver.version: AndroidDriver
+	at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:44)
+Caused by: java.lang.reflect.InvocationTargetException
+	at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:44)
+Caused by: java.net.ConnectException: Failed to connect to /172.17.0.2:49412
+	at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:44)
+Caused by: java.net.ConnectException: Connection timed out: no further information
+	at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:44)
+

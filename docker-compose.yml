@@ -21,3 +21,4 @@ services:
        - SELENIUM_HOST=selenium-hub      
        - MOBILE_WEB_TEST=true
        - AUTO_RECORD=true
+       - RELAXED_SECURITY=true

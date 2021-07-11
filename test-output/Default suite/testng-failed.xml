@@ -5,7 +5,9 @@
     <classes>
       <class name="com.swiggy.SwiggyAppiumScript">
         <methods>
+          <include name="test1"/>
           <include name="StartConnection"/>
+          <include name="TearDown"/>
         </methods>
       </class> <!-- com.swiggy.SwiggyAppiumScript -->
     </classes>

@@ -4,5 +4,5 @@ services:
         container_name: appium-emulator
         image: rgonalo/appium-emulator        
         ports:
-          - 4444:4444
+          - 49155:49155
  

@@ -16,7 +16,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class SwiggyAppiumScript {
 	
-	static AndroidDriver<AndroidElement> driver = null;
+	static RemoteWebDriver driver;
 	
 	@Test
 	public void StartConnection () throws MalformedURLException {
@@ -41,7 +41,7 @@ public class SwiggyAppiumScript {
 		//This is local Appium
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");		
 		
-		driver = new AndroidDriver<>(url, cap);		
+		driver = new RemoteWebDriver(url, cap);		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		System.out.println("Connection successfuly started!");
 		driver.quit();

@@ -57,7 +57,7 @@ public class SwiggyAppiumScript {
 			
 		
 		//This is Docker 		
-		URL url = new URL("http://0.0.0.0:49155/wd/hub");
+		URL url = new URL("http://0.0.0.0:49153/wd/hub");
 
 		//This is local Appium
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");		

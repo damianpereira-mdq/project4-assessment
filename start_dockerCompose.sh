@@ -1,3 +1,3 @@
-#!/bin/sh
-cd /path to project
-docker-compose up
+#!/bin/bash
+cd /project4-assessment
+docker-compose up -d

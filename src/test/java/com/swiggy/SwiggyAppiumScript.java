@@ -25,9 +25,9 @@ public class SwiggyAppiumScript {
 		
 		DesiredCapabilities cap = new DesiredCapabilities();			
 		
-		cap.setCapability("deviceName", "nexus_6_5.1.1");		
+		cap.setCapability("deviceName", "nexus_5_5.1.1");		
 		cap.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-		cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
+		//cap.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11");
 		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
 		cap.setCapability("systemPort", 8201);
 		

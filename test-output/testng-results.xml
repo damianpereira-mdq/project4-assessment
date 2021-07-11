@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-10T01:50:10 ART" name="Default suite" finished-at="2021-07-10T01:50:31 ART" duration-ms="20704">
+  <suite started-at="2021-07-11T01:33:13 ART" name="Default suite" finished-at="2021-07-11T01:33:34 ART" duration-ms="21038">
     <groups>
     </groups>
-    <test started-at="2021-07-10T01:50:10 ART" name="Default test" finished-at="2021-07-10T01:50:31 ART" duration-ms="20704">
+    <test started-at="2021-07-11T01:33:13 ART" name="Default test" finished-at="2021-07-11T01:33:34 ART" duration-ms="21038">
       <class name="com.swiggy.SwiggyAppiumScript">
-        <test-method signature="StartConnection()[pri:0, instance:com.swiggy.SwiggyAppiumScript@2ea227af]" started-at="2021-07-10T01:50:10 ART" name="StartConnection" finished-at="2021-07-10T01:50:31 ART" duration-ms="20667" status="FAIL">
+        <test-method signature="StartConnection()[pri:0, instance:com.swiggy.SwiggyAppiumScript@4386f16]" started-at="2021-07-11T01:33:13 ART" name="StartConnection" finished-at="2021-07-11T01:33:34 ART" duration-ms="20997" status="FAIL">
           <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+              <![CDATA[Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
     at getResponseForW3CError (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
     at asyncHandler (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -22,11 +22,11 @@ System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10',
 Driver info: driver.version: AndroidDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
     at getResponseForW3CError (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
     at asyncHandler (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -46,7 +46,7 @@ at io.appium.java_client.DefaultGenericMobileDriver.<init>(DefaultGenericMobileD
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:99)
 at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:96)
-at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:42)
+at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:44)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -82,11 +82,11 @@ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Delegating
 at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:193)
 ... 42 more
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20159ms.
+remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20154ms.
     at getResponseForW3CError (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
     at asyncHandler (/usr/lib/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:380:37)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -114,6 +114,10 @@ at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartConnection -->
+        <test-method signature="test1()[pri:0, instance:com.swiggy.SwiggyAppiumScript@4386f16]" started-at="2021-07-11T01:33:34 ART" name="test1" finished-at="2021-07-11T01:33:34 ART" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
       </class> <!-- com.swiggy.SwiggyAppiumScript -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

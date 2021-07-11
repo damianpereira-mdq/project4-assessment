@@ -5,29 +5,14 @@ services:
       container_name: selenium-hub
       privileged: true
       ports:
-        - 4444:4444   
-   
-   samsung_galaxy_S8:
-      image: budtmo/docker-android-x86-11.0
-      depends_on:
-        - selenium-hub
-      privileged: true
-      ports:
-        - 6080:6080
-      environment:
-        - DEVICE=Samsung Galaxy S8
-        - CONNECT_TO_GRID=true
-        - APPIUM=true
-        - SELENIUM_HOST=selenium-hub      
-        - MOBILE_WEB_TEST=true
-        - AUTO_RECORD=true
+        - 4444:4444      
       
    Nexus_6_5.1.1:
      image: budtmo/docker-android-x86-5.1.1
      depends_on:
        - selenium-hub
      ports:
-       - 6081:6080
+       - 6080:6080
      privileged: true
      environment:
        - DEVICE=Nexus 5

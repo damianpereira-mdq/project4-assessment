@@ -37,7 +37,7 @@ public class DockerComposeSetup {
 		System.out.println("Starting Docker-compose");
 
 		DockerComposeSetup dockerComposeSetup = new DockerComposeSetup();
-		dockerComposeSetup.runScript("sh E:/Simplilearn/Project4-Assessment/start_dockerCompose.sh");	
+		dockerComposeSetup.runScript("sh start_dockerCompose.sh");	
 
 		Thread.sleep(25000);		
 
@@ -47,7 +47,7 @@ public class DockerComposeSetup {
 		public void stopDocker () throws IOException, InterruptedException {
 
 			DockerComposeSetup dockerComposeSetup = new DockerComposeSetup();
-			dockerComposeSetup.runScript("sh /Project4-Assessment/stop_dockerCompose.sh");	
+			dockerComposeSetup.runScript("sh stop_dockerCompose.sh");	
 
 			Thread.sleep(25000);						
 

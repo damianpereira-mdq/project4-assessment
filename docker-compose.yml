@@ -2,4 +2,7 @@ version: '3.3'
 services:
     appium-emulator:
         container_name: appium-emulator
-        image: rgonalo/appium-emulator
+        image: rgonalo/appium-emulator        
+        ports:
+          - 4444:4444
+ 

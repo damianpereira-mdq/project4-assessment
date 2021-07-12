@@ -56,7 +56,7 @@ public class SwiggyAppiumScript {
 		//URL url = new URL("http://3.141.193.86:49155/wd/hub");
 
 		//This is local Appium
-		URL url = new URL("http://0.0.0.0:4723/wd/hub/");		
+		URL url = new URL("http://172.20.0.2:49155/wd/hub/");		
 		
 		driver = new AppiumDriver<WebElement>(url, cap);		
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

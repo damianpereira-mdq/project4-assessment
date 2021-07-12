@@ -57,20 +57,20 @@ public class SwiggyAppiumScript {
 			
 		
 		//This is Docker 		
-		URL url = new URL("http://0.0.0.0:4723/wd/hub");
+		URL url = new URL("http://0.0.0.0:49155/wd/hub");
 
 		//This is local Appium
 		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");		
 		
 		driver = new AppiumDriver<WebElement>(url, cap);		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		System.out.println("Connection successfuly started!");
-		
+		driver.quit();
 	}
 
 	@AfterClass
 	public void TearDown () {		
-		driver.quit();
+		//driver.quit();
 	}
 	
 	@Test

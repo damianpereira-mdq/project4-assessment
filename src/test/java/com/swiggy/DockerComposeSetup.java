@@ -10,33 +10,14 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
 
-public class DockerComposeSetup {
-
-	int iExitValue;
-	String sCommandString;
-
-	public void runScript(String command){
-		sCommandString = command;
-		CommandLine oCmdLine = CommandLine.parse(sCommandString);
-		DefaultExecutor oDefaultExecutor = new DefaultExecutor();
-		oDefaultExecutor.setExitValue(0);
-		try {
-			iExitValue = oDefaultExecutor.execute(oCmdLine);
-		} catch (ExecuteException e) {
-			System.err.println("Execution failed.");
-			e.printStackTrace();
-		} catch (IOException e) {
-			System.err.println("permission denied.");
-			e.printStackTrace();
-		}
-	}
+public class DockerComposeSetup {	
 
 	
 	@BeforeTest
 	public void startDocker () throws IOException, InterruptedException {		
 	
 
-		System.out.println("Starting Docker-compose");
+		System.out.println("Starting Docker-compose...");
 
 		try {
             Process proc = Runtime.getRuntime().exec("sh start_dockerCompose.sh"); //Whatever you want to execute
@@ -53,7 +34,8 @@ public class DockerComposeSetup {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
+		
+		System.out.println("Docker-compose successfuly started!");
 		Thread.sleep(25000);		
 
 	}

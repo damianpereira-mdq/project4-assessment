@@ -43,11 +43,7 @@ public class SwiggyAppiumScript {
 		  cap.setCapability("platformName", "Android"); 
 		  cap.setCapability("platformVersion", "4.4"); 
 		  cap.setCapability("appPackage","com.android.calculator2"); 
-		  cap.setCapability("appActivity","com.android.calculator2.Calculator");
-		 
-		
-		
-		
+		  cap.setCapability("appActivity","com.android.calculator2.Calculator");	
 		
 		
 		//cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UIAutomator2");
@@ -57,10 +53,10 @@ public class SwiggyAppiumScript {
 			
 		
 		//This is Docker 		
-		URL url = new URL("http://3.141.193.86:49155/wd/hub");
+		//URL url = new URL("http://3.141.193.86:49155/wd/hub");
 
 		//This is local Appium
-		//URL url = new URL("http://127.0.0.1:4723/wd/hub/");		
+		URL url = new URL("http://127.0.0.1:4723/wd/hub/");		
 		
 		driver = new AppiumDriver<WebElement>(url, cap);		
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

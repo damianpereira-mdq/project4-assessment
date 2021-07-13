@@ -2,37 +2,39 @@
 <testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-11T17:05:37 ART" name="Suite" finished-at="2021-07-11T17:06:29 ART" duration-ms="52474">
+  <suite started-at="2021-07-12T01:24:09 ART" name="Default suite" finished-at="2021-07-12T01:24:13 ART" duration-ms="3487">
     <groups>
     </groups>
-    <test started-at="2021-07-11T17:05:37 ART" name="Test" finished-at="2021-07-11T17:06:29 ART" duration-ms="52474">
+    <test started-at="2021-07-12T01:24:09 ART" name="Default test" finished-at="2021-07-12T01:24:13 ART" duration-ms="3487">
       <class name="com.swiggy.SwiggyAppiumScript">
-        <test-method is-config="true" signature="StartConnection()[pri:0, instance:com.swiggy.SwiggyAppiumScript@30ee2816]" started-at="2021-07-11T17:06:02 ART" name="StartConnection" finished-at="2021-07-11T17:06:04 ART" duration-ms="2414" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method is-config="true" signature="StartConnection()[pri:0, instance:com.swiggy.SwiggyAppiumScript@10e41621]" started-at="2021-07-12T01:24:09 ART" name="StartConnection" finished-at="2021-07-12T01:24:13 ART" duration-ms="3436" status="FAIL">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Connection refused: no further information
+              <![CDATA[Unable to create a new remote session. Original error: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: AppiumDriver]]>
+Driver info: driver.version: AndroidDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Connection refused: no further information
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Original error: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: AppiumDriver
-at io.appium.java_client.remote.AppiumCommandExecutor.lambda$6(AppiumCommandExecutor.java:259)
-at java.base/java.util.Optional.orElseGet(Optional.java:362)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:258)
+Driver info: driver.version: AndroidDriver
+at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:216)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:225)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:338)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
 at io.appium.java_client.DefaultGenericMobileDriver.<init>(DefaultGenericMobileDriver.java:37)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:99)
-at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:65)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:96)
+at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:57)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,20 +61,21 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.ConnectException: Connection refused: no further information
-at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-at java.base/java.net.Socket.connect(Socket.java:648)
-at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:193)
+... 40 more
+Caused by: java.io.IOException: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
+at okhttp3.internal.http1.Http1Codec.readResponseHeaders(Http1Codec.java:208)
+at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:88)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at org.openqa.selenium.remote.internal.OkHttpClient$Factory$1.lambda$createClient$1(OkHttpClient.java:152)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:45)
 at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
 at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
 at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
@@ -88,46 +91,46 @@ at okhttp3.RealCall.execute(RealCall.java:77)
 at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
 at io.appium.java_client.remote.AppiumCommandExecutor.lambda$1(AppiumCommandExecutor.java:162)
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:193)
-at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:225)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-... 36 more
+... 45 more
+Caused by: java.io.EOFException: \n not found: limit=0 content=…
+at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:237)
+at okhttp3.internal.http1.Http1Codec.readHeaderLine(Http1Codec.java:215)
+at okhttp3.internal.http1.Http1Codec.readResponseHeaders(Http1Codec.java:189)
+... 66 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartConnection -->
-        <test-method signature="test1()[pri:0, instance:com.swiggy.SwiggyAppiumScript@30ee2816]" started-at="2021-07-11T17:06:04 ART" name="test1" finished-at="2021-07-11T17:06:04 ART" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method signature="test1()[pri:0, instance:com.swiggy.SwiggyAppiumScript@10e41621]" started-at="2021-07-12T01:24:13 ART" name="test1" finished-at="2021-07-12T01:24:13 ART" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[Connection refused: no further information
+              <![CDATA[Unable to create a new remote session. Original error: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: AppiumDriver]]>
+Driver info: driver.version: AndroidDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Connection refused: no further information
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Original error: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-EER3MNQ', ip: '192.168.1.64', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: AppiumDriver
-at io.appium.java_client.remote.AppiumCommandExecutor.lambda$6(AppiumCommandExecutor.java:259)
-at java.base/java.util.Optional.orElseGet(Optional.java:362)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:258)
+Driver info: driver.version: AndroidDriver
+at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:216)
+at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:225)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:41)
 at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:1)
+at io.appium.java_client.android.AndroidDriver.execute(AndroidDriver.java:1)
 at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
 at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:338)
 at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:131)
 at io.appium.java_client.DefaultGenericMobileDriver.<init>(DefaultGenericMobileDriver.java:37)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:89)
 at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:99)
-at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:65)
+at io.appium.java_client.android.AndroidDriver.<init>(AndroidDriver.java:96)
+at com.swiggy.SwiggyAppiumScript.StartConnection(SwiggyAppiumScript.java:57)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -154,20 +157,21 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.net.ConnectException: Connection refused: no further information
-at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-at java.base/java.net.Socket.connect(Socket.java:648)
-at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:193)
+... 40 more
+Caused by: java.io.IOException: unexpected end of stream on Connection{0.0.0.0:49160, proxy=DIRECT hostAddress=/0.0.0.0:49160 cipherSuite=none protocol=http/1.1}
+at okhttp3.internal.http1.Http1Codec.readResponseHeaders(Http1Codec.java:208)
+at okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:88)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at org.openqa.selenium.remote.internal.OkHttpClient$Factory$1.lambda$createClient$1(OkHttpClient.java:152)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:45)
 at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
 at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
 at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
@@ -183,35 +187,23 @@ at okhttp3.RealCall.execute(RealCall.java:77)
 at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
 at io.appium.java_client.remote.AppiumCommandExecutor.lambda$1(AppiumCommandExecutor.java:162)
 at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at io.appium.java_client.remote.AppiumCommandExecutor$1.createSession(AppiumCommandExecutor.java:193)
-at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:225)
-at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:247)
-... 36 more
+... 45 more
+Caused by: java.io.EOFException: \n not found: limit=0 content=…
+at okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:237)
+at okhttp3.internal.http1.Http1Codec.readHeaderLine(Http1Codec.java:215)
+at okhttp3.internal.http1.Http1Codec.readResponseHeaders(Http1Codec.java:189)
+... 66 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:com.swiggy.SwiggyAppiumScript@30ee2816]" started-at="2021-07-11T17:06:04 ART" name="TearDown" finished-at="1969-12-31T21:00:00 ART" duration-ms="-1626033964482" status="SKIP">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:com.swiggy.SwiggyAppiumScript@10e41621]" started-at="2021-07-12T01:24:13 ART" name="TearDown" finished-at="1969-12-31T21:00:00 ART" duration-ms="-1626063853113" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
       </class> <!-- com.swiggy.SwiggyAppiumScript -->
-      <class name="com.swiggy.DockerComposeSetup">
-        <test-method is-config="true" signature="startDocker()[pri:0, instance:com.swiggy.DockerComposeSetup@4b0b0854]" started-at="2021-07-11T17:05:37 ART" name="startDocker" finished-at="2021-07-11T17:06:02 ART" duration-ms="25017" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startDocker -->
-        <test-method is-config="true" signature="stopDocker()[pri:0, instance:com.swiggy.DockerComposeSetup@4b0b0854]" started-at="2021-07-11T17:06:04 ART" name="stopDocker" finished-at="2021-07-11T17:06:29 ART" duration-ms="25005" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopDocker -->
-      </class> <!-- com.swiggy.DockerComposeSetup -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

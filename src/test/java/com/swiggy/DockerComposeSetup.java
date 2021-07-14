@@ -16,8 +16,8 @@ public class DockerComposeSetup {
 
 		System.out.println("Starting Docker-compose...");
 		
-		Runtime.getRuntime().exec("/bin/bash -c cd project4-assessment");
-		Runtime.getRuntime().exec("/bin/bash -c docker-compose up -d");
+		String[] args = new String[] {"/bin/bash", "-c", "docker-compose up -d"};
+		Process proc = new ProcessBuilder(args).start();
 
 		/*
 		 * try { Process proc = Runtime.getRuntime().exec("sh start_dockerCompose.sh");
@@ -36,7 +36,8 @@ public class DockerComposeSetup {
 		@AfterTest
 		public void stopDocker () throws IOException, InterruptedException {
 
-			Runtime.getRuntime().exec("/bin/bash -c docker-compose down");
+			String[] args = new String[] {"/bin/bash", "-c", "docker-compose down"};
+			Process proc = new ProcessBuilder(args).start();
 			
 			/*
 			 * try { Process proc = Runtime.getRuntime().exec("sh stop_dockerCompose.sh");

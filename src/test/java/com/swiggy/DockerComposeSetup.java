@@ -6,9 +6,6 @@ import java.io.InputStreamReader;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.ExecuteException;
 
 public class DockerComposeSetup {	
 

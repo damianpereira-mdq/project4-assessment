@@ -15,48 +15,39 @@ public class DockerComposeSetup {
 	
 
 		System.out.println("Starting Docker-compose...");
+		
+		Runtime.getRuntime().exec("/bin/bash -c cd project4-assessment");
+		Runtime.getRuntime().exec("/bin/bash -c docker-compose up -d");
 
-		try {
-            Process proc = Runtime.getRuntime().exec("sh start_dockerCompose.sh"); //Whatever you want to execute
-            BufferedReader read = new BufferedReader(new InputStreamReader(
-                    proc.getInputStream()));
-            try {
-                proc.waitFor();
-            } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
-            }
-            while (read.ready()) {
-                System.out.println(read.readLine());
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
+		/*
+		 * try { Process proc = Runtime.getRuntime().exec("sh start_dockerCompose.sh");
+		 * //Whatever you want to execute BufferedReader read = new BufferedReader(new
+		 * InputStreamReader( proc.getInputStream())); try { proc.waitFor(); } catch
+		 * (InterruptedException e) { System.out.println(e.getMessage()); } while
+		 * (read.ready()) { System.out.println(read.readLine()); } } catch (IOException
+		 * e) { System.out.println(e.getMessage()); }
+		 */
 		
 		System.out.println("Docker-compose successfuly started!");
-		Thread.sleep(25000);		
+		Thread.sleep(60000);		
 
 	}
 
 		@AfterTest
 		public void stopDocker () throws IOException, InterruptedException {
 
-			try {
-	            Process proc = Runtime.getRuntime().exec("sh stop_dockerCompose.sh"); //Whatever you want to execute
-	            BufferedReader read = new BufferedReader(new InputStreamReader(
-	                    proc.getInputStream()));
-	            try {
-	                proc.waitFor();
-	            } catch (InterruptedException e) {
-	                System.out.println(e.getMessage());
-	            }
-	            while (read.ready()) {
-	                System.out.println(read.readLine());
-	            }
-	        } catch (IOException e) {
-	            System.out.println(e.getMessage());
-	        }	
+			Runtime.getRuntime().exec("/bin/bash -c docker-compose down");
+			
+			/*
+			 * try { Process proc = Runtime.getRuntime().exec("sh stop_dockerCompose.sh");
+			 * //Whatever you want to execute BufferedReader read = new BufferedReader(new
+			 * InputStreamReader( proc.getInputStream())); try { proc.waitFor(); } catch
+			 * (InterruptedException e) { System.out.println(e.getMessage()); } while
+			 * (read.ready()) { System.out.println(read.readLine()); } } catch (IOException
+			 * e) { System.out.println(e.getMessage()); }
+			 */
 
-			Thread.sleep(25000);						
+			Thread.sleep(40000);						
 
 		}	
 

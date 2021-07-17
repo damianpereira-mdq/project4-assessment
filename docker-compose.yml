@@ -26,5 +26,7 @@ services:
             - SELENIUM_HOST=selenium_hub
  #           - AUTO_RECORD=true
  #           - MOBILE_WEB_TEST=true 
+ 
+
         
         

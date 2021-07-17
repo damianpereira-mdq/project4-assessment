@@ -15,10 +15,21 @@ public class DockerComposeSetup {
 	
 
 		System.out.println("Starting Docker-compose...");
+		/*
+		 * // Working but somewhere over the cloud String[] args = new String[]
+		 * {"/bin/bash", "-c", "docker-compose up -d"}; Process proc = new
+		 * ProcessBuilder(args).start();
+		 */
 		
-		String[] args = new String[] {"/bin/bash", "-c", "docker-compose up -d"};
-		Process proc = new ProcessBuilder(args).start();
+		// To test
+		String myKey="/project4-assessment/NewKeyTest.pem";
+		Runtime runtime = Runtime.getRuntime();
+		String command = "ssh -i "+myKey+" ec2-user@ec2-3-23-60-85.us-east-2.compute.amazonaws.com 'bash /project4-assessment/start_dockerCompose.sh' -o StrictHostKeyChecking=no ";
 
+		Process p = runtime.exec(command);
+		p.waitFor();		
+		
+		
 		/*
 		 * try { Process proc = Runtime.getRuntime().exec("sh start_dockerCompose.sh");
 		 * //Whatever you want to execute BufferedReader read = new BufferedReader(new
@@ -36,8 +47,12 @@ public class DockerComposeSetup {
 		@AfterTest
 		public void stopDocker () throws IOException, InterruptedException {
 
-			String[] args = new String[] {"/bin/bash", "-c", "docker-compose down"};
-			Process proc = new ProcessBuilder(args).start();
+			String myKey="/project4-assessment/NewKeyTest.pem";
+			Runtime runtime = Runtime.getRuntime();
+			String command = "ssh -i "+myKey+" ec2-user@ec2-3-23-60-85.us-east-2.compute.amazonaws.com 'bash /project4-assessment/stop_dockerCompose.sh' -o StrictHostKeyChecking=no ";
+
+			Process p = runtime.exec(command);
+			p.waitFor();
 			
 			/*
 			 * try { Process proc = Runtime.getRuntime().exec("sh stop_dockerCompose.sh");
